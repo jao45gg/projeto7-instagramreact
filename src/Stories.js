@@ -1,28 +1,28 @@
 export default function Stories() {
 
     const dados = [{
-        imagem: "../public/assets/img/9gag.svg",
+        imagem: "assets/img/9gag.svg",
         texto: "9gag"
     }, {
-        imagem: "../public/assets/img/meowed.svg",
+        imagem: "assets/img/meowed.svg",
         texto: "meowed"
     }, {
-        imagem: "../public/assets/img/barked.svg",
+        imagem: "assets/img/barked.svg",
         texto: "barked"
     }, {
-        imagem: "../public/assets/img/nathanwpylestrangeplanet.svg",
+        imagem: "assets/img/nathanwpylestrangeplanet.svg",
         texto: "nathanwpylestrangeplanet"
     }, {
-        imagem: "../public/assets/img/wawawicomics.svg",
+        imagem: "assets/img/wawawicomics.svg",
         texto: "wawawicomics"
     }, {
-        imagem: "../public/assets/img/respondeai.svg",
+        imagem: "assets/img/respondeai.svg",
         texto: "respondeai"
     }, {
-        imagem: "../public/assets/img/filomoderna.svg",
+        imagem: "assets/img/filomoderna.svg",
         texto: "filomoderna"
     }, {
-        imagem: "../public/assets/img/memeriagourmet.svg",
+        imagem: "assets/img/memeriagourmet.svg",
         texto: "memeriagourmet"
     }]
 
