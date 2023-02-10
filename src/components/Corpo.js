@@ -1,4 +1,4 @@
-import Stories from './Stories'
+import Stories from './Stories';
 import Posts from './Posts';
 import Sidebar from './SideBar';
 

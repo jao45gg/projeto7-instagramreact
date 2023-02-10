@@ -21,7 +21,9 @@ function Teste(dado) {
             <div class="conteudo">
                 <img src={dado.imagemPost} alt={dado.textoPost} data-test="post-image"
                     onDoubleClick={() => {
-                        if (!Like) setNumCurtidas(NumCurtidas + 1);
+                        if (!Like) {
+                            setNumCurtidas(NumCurtidas + 1);
+                        }
                         setLike(true);
                     }} />
             </div>

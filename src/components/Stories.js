@@ -24,7 +24,7 @@ export default function Stories() {
     }, {
         imagem: "assets/img/memeriagourmet.svg",
         texto: "memeriagourmet"
-    }]
+    }];
 
     return (
         <div class="stories">
