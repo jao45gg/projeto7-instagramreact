@@ -1,29 +1,30 @@
 import { useState } from "react";
 
-function Acoes() {
-
-    const [Icon, setIcon] = useState("bookmark-outline");
-
-    return (
-        <div class="acoes">
-            <div>
-                <ion-icon name="heart-outline"></ion-icon>
-                <ion-icon name="chatbubble-outline"></ion-icon>
-                <ion-icon name="paper-plane-outline"></ion-icon>
-            </div>
-            <div>
-                <ion-icon name={Icon} onClick={() => {
-                    if(Icon === "bookmark-outline")
-                        setIcon("bookmark");
-                    else
-                        setIcon("bookmark-outline");
-                }}/>
-            </div>
-        </div>
-    );
-}
-
 export default function Posts() {
+
+    function Acoes(props) {
+
+        const [BookIcon, setBookIcon] = useState(false);
+        const [Like, setLike] = useState(false);
+
+        if(props.state === true)
+            setLike(true);
+
+        return (
+            <div class="acoes">
+                <div>
+                    {Like ? <ion-icon class="vermelho" name="heart" onClick={() => setLike(false)} /> :
+                        <ion-icon class="" name="heart-outline" onClick={() => setLike(true)} />}
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                </div>
+                <div>
+                    {BookIcon ? <ion-icon name="bookmark" onClick={() => setBookIcon(false)} /> :
+                        <ion-icon name="bookmark-outline" onClick={() => setBookIcon(true)} />}
+                </div>
+            </div>
+        );
+    }
 
     const dados = [{
         imagem: "assets/img/meowed.svg",
@@ -51,6 +52,8 @@ export default function Posts() {
         numCurtidas: "101.523"
     }];
 
+    let [likeState,setlikeState] = useState(false);
+
     return (
         <div class="posts">
             {dados.map(dado =>
@@ -66,11 +69,10 @@ export default function Posts() {
                     </div>
 
                     <div class="conteudo">
-                        <img src={dado.imagemPost} alt={dado.textoPost} />
+                        <img src={dado.imagemPost} alt={dado.textoPost} onDoubleClick={() => setlikeState(true)} />
                     </div>
-
                     <div class="fundo">
-                        <Acoes />
+                        <Acoes state={likeState}/>
 
                         <div class="curtidas">
                             <img src={dado.imagemCurtidas} alt={dado.nomeCurtidas} />
