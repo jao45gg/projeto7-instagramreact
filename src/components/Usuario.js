@@ -7,17 +7,19 @@ export default function Usuario(props) {
 
     return (
         <div class="usuario">
-            <img src={ImgPerfil} alt="imagem de perfil" onClick={() => {
-                const url = prompt("Digite a url da sua imagem!");
-                url ? setImgPerfil(url) : alert("Url invalida");
-            }} />
+            <img src={ImgPerfil} alt="imagem de perfil" data-test="profile-image"
+                onClick={() => {
+                    const url = prompt("Digite a url da sua imagem!");
+                    url ? setImgPerfil(url) : alert("Url invalida");
+                }} />
             <div class="texto">
                 <span>
-                    <strong>{Nome}</strong>
-                    <ion-icon name="pencil" onClick={() => {
-                        const nome = prompt("Digite o seu nome!");
-                        nome ? setNome(nome) : alert("Nome invalido");
-                    }} />
+                    <strong data-test="name">{Nome}</strong>
+                    <ion-icon name="pencil" data-test="edit-name"
+                        onClick={() => {
+                            const nome = prompt("Digite o seu nome!");
+                            nome ? setNome(nome) : alert("Nome invalido");
+                        }} />
                 </span>
             </div>
         </div>
