@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 function Acoes() {
+
+    const [Icon, setIcon] = useState("bookmark-outline");
+
     return (
         <div class="acoes">
             <div>
@@ -7,7 +12,12 @@ function Acoes() {
                 <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
+                <ion-icon name={Icon} onClick={() => {
+                    if(Icon === "bookmark-outline")
+                        setIcon("bookmark");
+                    else
+                        setIcon("bookmark-outline");
+                }}/>
             </div>
         </div>
     );
