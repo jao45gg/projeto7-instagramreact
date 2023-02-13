@@ -6,13 +6,13 @@ export default function Usuario(props) {
     const [Nome, setNome] = useState(props.texto);
 
     return (
-        <div class="usuario">
+        <div className="usuario">
             <img src={ImgPerfil} alt="imagem de perfil" data-test="profile-image"
                 onClick={() => {
                     const url = prompt("Digite a url da sua imagem!");
                     url ? setImgPerfil(url) : alert("Url invalida");
                 }} />
-            <div class="texto">
+            <div className="texto">
                 <span>
                     <strong data-test="name">{Nome}</strong>
                     <ion-icon name="pencil" data-test="edit-name"

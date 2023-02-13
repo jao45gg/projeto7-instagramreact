@@ -1,24 +1,24 @@
 import { useState } from "react";
 
-function Teste(dado) {
+function Post(dado,index) {
 
     const [BookIcon, setBookIcon] = useState(false);
     const [Like, setLike] = useState(false);
     const [NumCurtidas, setNumCurtidas] = useState(dado.numCurtidas);
 
     return (
-        <div class="post" data-test="post">
-            <div class="topo">
-                <div class="usuario">
+        <div key={index} className="post" data-test="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={dado.imagem} alt={dado.texto} />
                     {dado.texto}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div className="conteudo">
                 <img src={dado.imagemPost} alt={dado.textoPost} data-test="post-image"
                     onDoubleClick={() => {
                         if (!Like) {
@@ -27,8 +27,8 @@ function Teste(dado) {
                         setLike(true);
                     }} />
             </div>
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
                         {Like ? <ion-icon class="vermelho" name="heart" data-test="like-post"
                             onClick={() => {
@@ -51,9 +51,9 @@ function Teste(dado) {
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={dado.imagemCurtidas} alt={dado.nomeCurtidas} />
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{dado.nomeCurtidas}</strong> e <strong data-test="likes-number">
                             outras {NumCurtidas} pessoas</strong>
                     </div>
@@ -91,8 +91,8 @@ export default function Posts() {
     }];
 
     return (
-        <div class="posts">
-            {dados.map(dado => Teste(dado))}
+        <div className="posts">
+            {dados.map( (dado,index) => Post(dado,index))}
         </div>
     );
 }

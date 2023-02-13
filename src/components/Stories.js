@@ -27,18 +27,18 @@ export default function Stories() {
     }];
 
     return (
-        <div class="stories">
-            {dados.map(dado =>
-                <div class="story">
-                    <div class="imagem">
+        <div className="stories">
+            {dados.map( (dado, index) =>
+                <div key={index} className="story">
+                    <div className="imagem">
                         <img src={dado.imagem} alt={dado.texto} />
                     </div>
-                    <div class="usuario">
+                    <div className="usuario">
                         {dado.texto}
                     </div>
                 </div>)}
 
-            <div class="setinha">
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
